@@ -14,6 +14,7 @@ else
 	echo "Lost the game"
 fi
 
+#condition on which resignation for the day will happen
 if [[ $stake == 150 || $stake == 50 ]]
 then
 	echo "Resign for the day"
