@@ -6,7 +6,7 @@ gameamount=0
 Won=0
 Lost=0
 
-while [ $gameamount -lt $stake ]
+while [[ $stake != 0 && $gameamount -lt $stake ]]
 do
 	((gameamount++))
 	result=$(($RANDOM%2))
@@ -21,3 +21,4 @@ done
 
 echo Won $Won times
 echo Lost $Lost times
+
