@@ -96,10 +96,31 @@ do
 	fi
 done
 }
+function getNextMonthCheck(){
+	if [ $noOfWinDay -gt $noOfLossDay ]
+	then
+		echo "you are eligible for next month also so enter 0 to continue or 1 to stop"
+		read input
+		if [ $input -eq 0 ]
+		then
+			for (( i=0;i<30;i++ ))
+			do
+				play
+			done
+			getAmount
+			getLuckyDay
+			getNextMonthCheck
+		else
+			echo "thanks for playing"
+		fi
+	else
+		echo "you have loss more money plz stop playing for next month"
+	fi
+}
 for (( i=0;i<30;i++ ))
 do
 play
 done
 getAmount
 getLuckyDay
-
+getNextMonthCheck
